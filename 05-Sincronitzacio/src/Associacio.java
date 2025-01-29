@@ -13,7 +13,6 @@ public class Associacio extends Thread {
         socis = new Soci[nSocis];
         for (int i = 0; i < nSocis; i++) {
             socis[i] = new Soci();
-
         }
     }
 
@@ -36,5 +35,4 @@ public class Associacio extends Thread {
     public void mostraBalancComptes() {
         System.out.println("Saldo: " + Compte.getInstancia().getSaldo());
     }
-
 }

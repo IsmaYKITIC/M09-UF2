@@ -6,22 +6,24 @@ public class Compte {
 
     private Compte() {
         this.saldo = 0;
-
     }
 
-    public static Compte getInstancia() {
+    public static synchronized Compte getInstancia() {
         if (instancia == null) {
             instancia = new Compte();
         }
         return instancia;
     }
 
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
+    public synchronized void ingresar(float cantidad) {
+        saldo += cantidad;
     }
 
-    public float getSaldo() {
+    public synchronized void retirar(float cantidad) {
+        saldo -= cantidad;
+    }
+
+    public synchronized float getSaldo() {
         return saldo;
     }
-
 }
