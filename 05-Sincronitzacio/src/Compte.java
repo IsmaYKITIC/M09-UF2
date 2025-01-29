@@ -6,6 +6,7 @@ public class Compte {
 
     private Compte() {
         this.saldo = 0;
+
     }
 
     public static Compte getInstancia() {
